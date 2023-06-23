@@ -1,0 +1,52 @@
+<section class="vh-100" style="background-color: #1e293b;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 3rem;">
+            <div class="card-body p-5">
+              <div class="text-center">
+                <h2 class="mb-5" style="font-weight: bold;">Sign-In</h2>
+              </div>
+              <form [formGroup]="logInForm" (ngSubmit)="logIn()" >
+              <div class="row">
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input
+                    matInput
+                    type="email"
+                    placeholder="email"
+                    formControlName="email"
+                  />
+                  <mat-icon matSuffix>email</mat-icon>
+                  <mat-error *ngIf="logInForm.get('email')?.invalid">{{ getErrorOnLogin('email') }}</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input
+                    matInput
+                    [type]="hideLoginPassword? 'password':'text'"
+                    placeholder="password"
+                    formControlName="password"
+                  />
+                  <button type="button" mat-icon-button matSuffix (click)="hideLoginPassword = !hideLoginPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideLoginPassword">
+                    <mat-icon>{{hideLoginPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                  <mat-error *ngIf="logInForm.get('password')?.invalid">{{ getErrorOnLogin('password') }}</mat-error>
+                </mat-form-field>
+              </div>
+              
+              <hr class="my-4">
+
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+              <a class="text-primary px-5" routerLink="/register">For new account register</a>
+            </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

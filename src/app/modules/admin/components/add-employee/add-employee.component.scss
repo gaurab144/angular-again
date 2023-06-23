@@ -1,0 +1,41 @@
+.page {
+    color: white;
+    padding:0 1rem;
+    background: #f1f5f9;
+    &__box {
+      min-height: 120px;
+      background: #1e293b;
+      margin:-3rem -1rem;
+      font-size: 36px;
+    }
+    &__content {
+        // height: 100vh;
+        height: 300px;
+        width: 1000px;
+    //   min-height: calc(100vh - 300px);
+      border-radius: 10px;
+      margin-top: -3rem;
+      margin-left: 2.5rem;
+      background: white;
+      color: black;
+      font-size: 1rem;
+      .row{
+        padding: 4px;
+      }
+    //   &-data {
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    //   }
+    }
+  }
+
+mat-form-field{
+    width: 100%;
+    mat-label{
+        height:-10px
+    }
+    mat-input{
+        min-height: 1px;
+    }
+}
