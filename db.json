@@ -1,6 +1,30 @@
 {
-  "employee": [],
-
+  "employee": [
+    {
+      "firstName": "gaurab",
+      "lastName": "subba",
+      "email": "144lazy@gmail.com",
+      "dob": "2023-06-13T18:15:00.000Z",
+      "gender": "male",
+      "education": "Intermidate",
+      "company": "sadf",
+      "experience": "",
+      "package": "dsfa",
+      "id": 1
+    },
+    {
+      "firstName": "sunil",
+      "lastName": "subba",
+      "email": "144lazy@gmail.com",
+      "dob": "2023-06-13T18:15:00.000Z",
+      "gender": "male",
+      "education": "Diploma",
+      "company": "dsaf",
+      "experience": "",
+      "package": "angular",
+      "id": 2
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
