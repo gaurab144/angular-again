@@ -95,6 +95,35 @@
                     <mat-radio-button value="third">Others</mat-radio-button>
                   </mat-radio-group>
                 </div>
+
+                <div class="col-md-4">
+                  <ng-container formArrayName="colors">
+                    <ng-container *ngFor="let items of colors.controls; let i = index" [formGroupName]="i">
+                      
+                      <div class="col-md-4">
+                        <mat-radio-group aria-label="Select an option" formControlName="rgb">
+                          <mat-radio-button value="red">Red</mat-radio-button>
+                          <mat-radio-button value="blue">Blue</mat-radio-button>
+                          <mat-radio-button value="green">Green</mat-radio-button>
+                        </mat-radio-group>
+      
+                        <!-- <mat-radio-group aria-label="Select an option" formControlName="bw">
+                          <mat-radio-button value="black">Black</mat-radio-button>
+                          <mat-radio-button value="White">White</mat-radio-button>
+                        </mat-radio-group> -->
+                      </div> 
+                      <div class="btn btn-danger">
+                        <button class="btn btn-danger" (click)="removeColor(i)">-</button>
+                      </div>
+                   
+                    </ng-container>
+                  </ng-container>
+
+                  <div>
+                    <button class="btn btn-primary" (click)="addArray()">Add</button>
+                  </div>
+                </div>
+
                 <div class="col-12">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

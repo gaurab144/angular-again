@@ -1,8 +1,67 @@
-<div class="container-fluid page">
-    <div class="d-flex align-item-center page__box p-3 mt-2">Layouts</div>
-    <div class="page__content shadow p-3 position-relative">
-      <div class="page__content-data position-absolute text-center">
-        Layout Content Goes Here
+<div class="container">
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmmit()">
+
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="name">
       </div>
     </div>
-  </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="email">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Address</label>
+      <div class="col-auto">
+        <button class="btn btn-primary" (click)="addArray()">Add</button>
+      </div>
+    </div>
+    
+    <div class="mb-3 row">
+      <div class="col-sm-10">
+        <!-- fromArray -->
+        <ng-container formArrayName="address">
+
+          <ng-container *ngFor="let items of address.controls; let i = index" [formGroupName]="i">
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Woda No</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="wodaNo">
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Palika</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="palika">
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">State</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="state">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <button class="btn btn-danger" (click)="removeAddress(i)">Remove</button>
+            </div>
+          </ng-container>
+
+        </ng-container>
+        <!--  -->
+        <div class="row mb-3">
+          <button class="btn btn-success" type="submit" >Save</button>
+        </div>
+
+      </div>
+    </div>
+
+  </form>
+
+</div>

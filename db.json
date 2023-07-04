@@ -1,31 +1,84 @@
 {
   "employee": [
     {
-      "firstName": "gaurab",
-      "lastName": "subba",
-      "email": "144lazy@gmail.com",
-      "dob": "2023-06-13T18:15:00.000Z",
-      "gender": "male",
-      "education": "Intermidate",
-      "company": "sadf",
-      "experience": "",
-      "package": "dsfa",
-      "id": 1
-    },
-    {
       "firstName": "sunil",
       "lastName": "subba",
       "email": "144lazy@gmail.com",
       "dob": "2023-06-13T18:15:00.000Z",
       "gender": "male",
       "education": "Diploma",
-      "company": "dsaf",
+      "company": "luck",
       "experience": "",
       "package": "angular",
       "id": 2
+    },
+    {
+      "firstName": "gaurab",
+      "lastName": "subba",
+      "email": "144lazy@gmail.com",
+      "dob": "",
+      "gender": "",
+      "education": "",
+      "company": "qewrreqw",
+      "experience": "",
+      "package": "qrweqe",
+      "id": 3
+    },
+    {
+      "firstName": "qrqrr",
+      "lastName": "qrerq",
+      "email": "144lazy@gmail.com",
+      "dob": "2023-06-06T18:15:00.000Z",
+      "gender": "",
+      "education": "",
+      "company": "qewrreqw",
+      "experience": "",
+      "package": "qrweqe",
+      "id": 4
+    },
+    {
+      "firstName": "gaurab",
+      "lastName": "subba",
+      "email": "144lazy@gmail.com",
+      "dob": "",
+      "gender": "",
+      "education": "Diploma",
+      "company": "sadfyyyyyy",
+      "experience": "",
+      "package": "abd",
+      "id": 5
+    },
+    {
+      "firstName": "gaurab",
+      "lastName": "subba",
+      "email": "144lazy@gmail.com",
+      "dob": "",
+      "gender": "",
+      "education": "Diploma",
+      "company": "self-employed",
+      "experience": "",
+      "package": "zadsa",
+      "id": 6
+    },
+    {
+      "firstName": "gaurab",
+      "lastName": "subba",
+      "email": "144lazy@gmail.com",
+      "dob": "2023-06-18T18:15:00.000Z",
+      "gender": "third",
+      "education": "Master",
+      "company": "klkjjkjkkjjk",
+      "experience": "",
+      "package": "ttttttttt",
+      "id": 7
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "profile": [
+    {
+      "name": "ziggs",
+      "email": "ziggs@email.com",
+      "number": "888888",
+      "password": "12345"
+    }
+  ]
 }

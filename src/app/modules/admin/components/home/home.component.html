@@ -3,7 +3,7 @@
 
     <div class="row">
       <div class="col-lg-4">
-        
+
         <!-- <div class="card mb-4">
           <div class="card-body text-center">
             
@@ -16,54 +16,57 @@
 
         <div class="card mb-4">
           <div class="card-body">
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Full Name</p>
+            <form (ngSubmit)="saveItem()">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Name</p>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" [(ngModel)]="selectedEmployee.firstName" name="firstName" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
               </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Johnatan Smith</p>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Email</p>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" [(ngModel)]="selectedEmployee.email" name="email" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
               </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Email</p>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Education</p>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" [(ngModel)]="selectedEmployee.education" name="education" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
               </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">example@example.com</p>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Company</p>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" [(ngModel)]="selectedEmployee.company" name="company" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
               </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Phone</p>
+              <hr>
+              <div class="row">
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-primary" type="submit">save</button>
+                </div>
               </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">(097) 234-5678</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Mobile</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
 
-     
+
         <div class="row">
           <div class="col-md-12">
             <div class="card mb-4 mb-md-0">
@@ -73,52 +76,66 @@
                   <mat-label>Filter</mat-label>
                   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
                 </mat-form-field>
-                
+
                 <div class="mat-elevation-z8">
                   <table mat-table [dataSource]="dataSource" matSort>
-                
+
                     <!-- ID Column -->
                     <ng-container matColumnDef="id">
                       <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
                       <td mat-cell *matCellDef="let row"> {{row.id}} </td>
                     </ng-container>
-                
+
                     <!-- Progress Column -->
                     <ng-container matColumnDef="firstName">
                       <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
                       <td mat-cell *matCellDef="let row"> {{row.firstName}}</td>
                     </ng-container>
-                
+
                     <!-- Name Column -->
                     <ng-container matColumnDef="email">
                       <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
                       <td mat-cell *matCellDef="let row"> {{row.email}} </td>
                     </ng-container>
-                
+
                     <!-- Fruit Column -->
                     <ng-container matColumnDef="education">
                       <th mat-header-cell *matHeaderCellDef mat-sort-header> Education </th>
                       <td mat-cell *matCellDef="let row"> {{row.education}} </td>
                     </ng-container>
 
-                    <ng-container matColumnDef="experience">
-                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Experience </th>
-                      <td mat-cell *matCellDef="let row"> {{row.experience}} </td>
+                    <ng-container matColumnDef="company">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Company</th>
+                      <td mat-cell *matCellDef="let row">{{ row.company }}</td>
                     </ng-container>
-                
+
+                    <!-- edit and delete operation -->
+                    <ng-container matColumnDef="action">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+                      <td mat-cell *matCellDef="let row">
+                        <button mat-icon-button color="primary" (click)="editEmployee(row)">
+                          <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteEmployee(row.id)">
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </td>
+                    </ng-container>
+                    <!--  -->
+
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                
+
                     <!-- Row shown when there is no matching data. -->
                     <tr class="mat-row" *matNoDataRow>
                       <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
                     </tr>
                   </table>
-                
+
                   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
                 </div>
-                
-                
+
+
               </div>
 
             </div>

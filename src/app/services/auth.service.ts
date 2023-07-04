@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of, throwError } from 'rxjs';
@@ -6,8 +7,14 @@ import { Observable, of, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+  url= 'http://localhost:3000/profile'
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _http: HttpClient) { }
+
+
+  findUser(): Observable<any[]> {
+    return this._http.get<any[]>(this.url)
+  }
 
   setToken(token: string): void{
     localStorage.setItem('token', token)
@@ -26,11 +33,5 @@ export class AuthService {
     this.router.navigate(['login'])
   }
 
-  login({ email, password }: any): Observable<any> {
-    if (email === 'test@gmail.com' && password === 'test123') {
-      this.setToken('abcdefghijklmnopqrstuvwxyz');
-      return of({ name: 'Gaurab Subba', email: 'admin@gmail.com' });
-    }
-    return throwError(new Error('Failed to login'));
-  }
+
 }

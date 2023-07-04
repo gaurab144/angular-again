@@ -14,6 +14,9 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SubjectsComponent } from './components/subjects/subjects.component';
+import { Comp1Component } from './components/subjects/comp1/comp1.component';
+import { Comp2Component } from './components/subjects/comp2/comp2.component';
 
 
 
@@ -25,7 +28,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     TestComponent,
     LayoutComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    SubjectsComponent,
+    Comp1Component,
+    Comp2Component
   ],
   imports: [
     CommonModule,

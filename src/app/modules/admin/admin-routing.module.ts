@@ -6,13 +6,15 @@ import { TestComponent } from './components/test/test.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
 
 const routes: Routes = [
   {path:'', component: DashboardComponent, children:[
     {path:'home', component:HomeComponent},
     // {path:'home', component: HomeComponent},
     {path:'layout', component: LayoutComponent},
-    {path:'employee_form', component: AddEmployeeComponent}
+    {path:'employee_form', component: AddEmployeeComponent},
+    {path:'subjects', component: SubjectsComponent}
 
   ]},
 ];
