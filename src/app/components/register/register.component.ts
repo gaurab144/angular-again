@@ -14,7 +14,7 @@ export class RegisterComponent {
   signUpForm: FormGroup;
 
   constructor(private _http: HttpClient, private router: Router) {
-    this.signUpForm= new FormGroup({
+    this.signUpForm = new FormGroup({
       name: new FormControl(),
       email: new FormControl(),
       number: new FormControl(),
@@ -22,16 +22,16 @@ export class RegisterComponent {
     })
   }
 
-  signUp(){
+  signUp() {
     console.log(this.signUpForm.value)
-    this._http.post<any>("http://localhost:3000/profile",this.signUpForm.value).subscribe( (res) => {
+    this._http.post<any>("http://localhost:3000/profile", this.signUpForm.value).subscribe((res) => {
       alert('signup success');
       this.signUpForm.reset();
       this.router.navigate(['login'])
     },
-    (err) => {
-      alert('something went wrong')
-    }
+      (err) => {
+        alert('something went wrong')
+      }
     )
   }
 

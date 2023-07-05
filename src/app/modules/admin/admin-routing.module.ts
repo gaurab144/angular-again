@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
+import { RoleGuard } from 'src/app/guards/role.guard';
 
 const routes: Routes = [
   {path:'', component: DashboardComponent, children:[
@@ -14,7 +15,7 @@ const routes: Routes = [
     // {path:'home', component: HomeComponent},
     {path:'layout', component: LayoutComponent},
     {path:'employee_form', component: AddEmployeeComponent},
-    {path:'subjects', component: SubjectsComponent}
+    {path:'subjects', component: SubjectsComponent,canActivate:[RoleGuard]}
 
   ]},
 ];

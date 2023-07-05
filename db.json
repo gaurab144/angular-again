@@ -55,7 +55,7 @@
       "dob": "",
       "gender": "",
       "education": "Diploma",
-      "company": "self-employed",
+      "company": "hello",
       "experience": "",
       "package": "zadsa",
       "id": 6
@@ -75,10 +75,25 @@
   ],
   "profile": [
     {
+      "name": "gaurab subba",
+      "email": "144lazy@gmail.com",
+      "number": "+9779815300160",
+      "password": "subba",
+      "id": 1
+    },
+    {
       "name": "ziggs",
       "email": "ziggs@email.com",
-      "number": "888888",
-      "password": "12345"
+      "number": null,
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "name": "admin",
+      "email": "admin144@gmail.com",
+      "number": null,
+      "password": "admin",
+      "id": 3
     }
   ]
 }
